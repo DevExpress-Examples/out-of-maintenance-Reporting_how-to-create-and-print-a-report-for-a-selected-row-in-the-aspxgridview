@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Default.aspx](./CS/GridReportPrint/Default.aspx) (VB: [Default.aspx.vb](./VB/GridReportPrint/Default.aspx.vb))
+* [Default.aspx](./CS/GridReportPrint/Default.aspx) (VB: [Default.aspx](./VB/GridReportPrint/Default.aspx))
 * [Default.aspx.cs](./CS/GridReportPrint/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/GridReportPrint/Default.aspx.vb))
 * [XtraReport1.cs](./CS/GridReportPrint/XtraReport1.cs) (VB: [XtraReport1.vb](./VB/GridReportPrint/XtraReport1.vb))
 <!-- default file list end -->
