@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,6 +12,20 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GridReportPrint</RootNamespace>
     <AssemblyName>GridReportPrint</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,205 +44,52 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Docs.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPivotGrid.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPivotGrid.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v13.1.Web, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Web, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\nwind.mdb"></Content>
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonBackC_16.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonBackDis.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonBackDis_16.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonBackH_16.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonBack_16.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonCheckedBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonEditBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonEditBackC.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonEditBackH.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonEditButtonBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonHoverBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtButtonPressedBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarFNNextYear.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarFNPrevYear.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarFootBtn.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarFootBtnH.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarFootBtnP.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarHeader.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarNextMonth.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarNextMonthDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarNextYear.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarNextYearDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarPrevMonth.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarPrevMonthDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarPrevYear.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCalendarPrevYearDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCheckBoxOff.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCheckBoxOn.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtCheckBoxUndefined.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtDropDown.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtDropDownDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtEllipsis.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtEllipsisDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtError.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtRadioButtonOff.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtRadioButtonOn.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinDecBtnBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditDecrementImage.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditDecrementImageDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditIncrementImage.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditIncrementImageDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditLargeDecImage.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditLargeDecImageDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditLargeIncImage.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinEditLargeIncImageDisabled.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinIncBtnBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinIncBtnHBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinIncBtnPBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinLargeIncBtnBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinLargeIncBtnHBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\edtSpinLargeIncBtnPBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\Error.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcadd.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcaddhot.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupaddcondition.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupaddgroup.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupand.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupnotand.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupnotor.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupor.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcgroupremove.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopany.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopbegin.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopbetween.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopblank.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopcontain.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopend.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopequal.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopgreater.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopgreaterorequal.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopless.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcoplessorequal.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcoplike.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopnotany.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopnotbetween.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopnotblank.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopnotcontain.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopnotequal.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcopnotlike.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcremove.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\fcremovehot.png" />
-    <Content Include="App_Themes\BlackGlass\Editors\Loading.gif" />
-    <Content Include="App_Themes\BlackGlass\Editors\styles.css"></Content>
-    <Content Include="App_Themes\BlackGlass\GridView\gvCollapsedButton.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvCollapsedButton.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDetailCollapsedButton.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDetailCollapsedButton.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDetailExpandedButton.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDetailExpandedButton.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDragAndDropArrowDown.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDragAndDropArrowUp.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvDragAndDropHideColumn.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvExpandedButton.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvExpandedButton.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvFilterRowButton.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvGroupPanelBackground.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvGroupPanelSelBackground.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvHeaderBackground.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvHeaderFilter.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvHeaderFilterActive.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvHeaderSortDown.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvHeaderSortUp.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvLoadingOnStatusBar.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\gvParentGroupRows.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\Loading.gif" />
-    <Content Include="App_Themes\BlackGlass\GridView\pAll.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pAllDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pFirst.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pFirstDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pLast.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pLastDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pNext.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pNextDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pPrev.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\pPrevDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\GridView\styles.css" />
-    <Content Include="App_Themes\BlackGlass\GridView\WindowResizer.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\Loading.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mHorizontalPopOut.png" />
-    <Content Include="App_Themes\BlackGlass\Web\mItemBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mItemBackH.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mItemBackLevel0.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mItemBackS.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mSubMenuItem.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mSubMenuItemChecked.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mVerticalItemBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\mVerticalPopOut.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\nbCollapse.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\nbExpand.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\nbItemBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\nbItemBackH.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pAll.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pAllDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pcCloseButton.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pcItemCloseButton.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pcItemFooter.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pcItemHeader.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pcModalBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pcSizeGrip.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pcTabBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pcTabBackH.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\pFirst.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pFirstDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pLast.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pLastDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pNext.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pNextDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pPrev.png" />
-    <Content Include="App_Themes\BlackGlass\Web\pPrevDisabled.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpBottomLeftCorner.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpBottomRightCorner.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpContentBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\rpContentBottomEdge.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\rpContentLeftEdge.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\rpContentRightEdge.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\rpHeaderBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\rpHeaderLeftEdge.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpHeaderRightEdge.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpNoHeaderTopLeftCorner.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpNoHeaderTopRightCorner.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpTopEdge.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\rpTopLeftCorner.png" />
-    <Content Include="App_Themes\BlackGlass\Web\rpTopRightCorner.png" />
-    <Content Include="App_Themes\BlackGlass\Web\smBullet.png" />
-    <Content Include="App_Themes\BlackGlass\Web\styles.css" />
-    <Content Include="App_Themes\BlackGlass\Web\tcTabBack.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\tcTabBackH.gif" />
-    <Content Include="App_Themes\BlackGlass\Web\tiItemBack.gif" />
+    <Content Include="App_Data\nwind.mdb">
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -238,44 +101,28 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NwindDataSet.cs">
-      <DependentUpon>NwindDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="NwindDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NwindDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XtraReport1.cs">
+    <Compile Include="ProductsReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="XtraReport1.Designer.cs">
-      <DependentUpon>XtraReport1.cs</DependentUpon>
+    <Compile Include="ProductsReport.Designer.cs">
+      <DependentUpon>ProductsReport.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="XtraReport1.resx">
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ProductsReport.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>XtraReport1.cs</DependentUpon>
+      <DependentUpon>ProductsReport.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="NwindDataSet.xsc">
-      <DependentUpon>NwindDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="NwindDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>NwindDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="NwindDataSet.xss">
-      <DependentUpon>NwindDataSet.xsd</DependentUpon>
-    </None>
-  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v8.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -291,8 +138,13 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49158</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl></IISUrl>
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

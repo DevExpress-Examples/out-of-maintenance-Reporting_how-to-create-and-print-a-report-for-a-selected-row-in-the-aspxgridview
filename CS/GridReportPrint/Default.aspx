@@ -1,63 +1,60 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="GridReportPrint._Default" %>
 
-<%@ Register Assembly="DevExpress.XtraReports.v13.1.Web, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.XtraReports.v19.2.Web.WebForms, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.XtraReports.Web" TagPrefix="dxxr" %>
 
-<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dxwgv" %>
-<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
-    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
-
+<%@ Register Assembly="DevExpress.Web.v19.2, Version=19.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Untitled Page</title>
+    <script type="text/javascript">
+        function PrintReport(categoryID) {
+            window.open("Default.aspx?isPrint=true&categoryID=" + categoryID, "PrintingFrame")
+            var frameElement = document.getElementById("FrameToPrint");
+            frameElement.addEventListener("load", function (e) {
+                if (frameElement.contentDocument.contentType !== "text/html")
+                    frameElement.contentWindow.print();
+            });
+        }
+
+        function Grid_CustomButtonClick(s, e) {
+            if (e.buttonID == 'btnPrint') {
+                PrintReport(s.GetRowKey(e.visibleIndex));
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        &nbsp;<asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/App_Data/nwind.mdb"
-            SelectCommand="SELECT [CategoryID], [CategoryName], [Description] FROM [Categories]"></asp:AccessDataSource>
-        &nbsp;
-        <dxwgv:ASPxGridView ID="Grid" runat="server" DataSourceID="AccessDataSource1" AutoGenerateColumns="False" KeyFieldName="CategoryID" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass">
-            <Columns>
-            <dxwgv:GridViewCommandColumn ButtonType="Button" Caption="Print" VisibleIndex="0">
-                <CustomButtons>
-                    <dxwgv:GridViewCommandColumnCustomButton ID="btnPrint" Text="Print">
-                    </dxwgv:GridViewCommandColumnCustomButton>
-                </CustomButtons>
-            </dxwgv:GridViewCommandColumn>
-                <dxwgv:GridViewDataTextColumn FieldName="CategoryID" ReadOnly="True" VisibleIndex="1">
-                    <EditFormSettings Visible="False" />
-                </dxwgv:GridViewDataTextColumn>
-                <dxwgv:GridViewDataTextColumn FieldName="CategoryName" VisibleIndex="2">
-                </dxwgv:GridViewDataTextColumn>
-                <dxwgv:GridViewDataTextColumn FieldName="Description" VisibleIndex="3">
-                </dxwgv:GridViewDataTextColumn>
-            </Columns>
-            <Styles CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass">
-                <Header ImageSpacing="5px" SortingImageSpacing="5px">
-                </Header>
-            </Styles>
-            <Images ImageFolder="~/App_Themes/BlackGlass/{0}/">
-                <FilterRowButton Height="13px" Width="13px" />
-            </Images>
-            <ClientSideEvents CustomButtonClick="function(s, e) {
-	if(e.buttonID == 'btnPrint'){
-		document.getElementById('visibleIndex').value = e.visibleIndex;
-		document.getElementById('isPrint').value = 'true';
-		Viewer.Print();
-	}
-}" />
-        </dxwgv:ASPxGridView>
-        <div width="1" heigth="1">
-            <dxxr:reportviewer id="Viewer" runat="server" clientinstancename="Viewer" PrintUsingAdobePlugIn="true"></dxxr:reportviewer>
+        <div>
+            <asp:AccessDataSource ID="AccessDataSource1" runat="server" DataFile="~/App_Data/nwind.mdb"
+                SelectCommand="SELECT [CategoryID], [CategoryName], [Description] FROM [Categories]"></asp:AccessDataSource>
+            <dx:ASPxGridView ID="Grid" runat="server" DataSourceID="AccessDataSource1" AutoGenerateColumns="False" KeyFieldName="CategoryID">
+                <Columns>
+                    <dx:GridViewCommandColumn ButtonType="Button" Caption="Print" VisibleIndex="0">
+                        <CustomButtons>
+                            <dx:GridViewCommandColumnCustomButton ID="btnPrint" Text="Print">
+                            </dx:GridViewCommandColumnCustomButton>
+                        </CustomButtons>
+                    </dx:GridViewCommandColumn>
+                    <dx:GridViewDataTextColumn FieldName="CategoryID" ReadOnly="True" VisibleIndex="1">
+                        <EditFormSettings Visible="False" />
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="CategoryName" VisibleIndex="2">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn FieldName="Description" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>
+                </Columns>                
+                <ClientSideEvents CustomButtonClick="Grid_CustomButtonClick" />
+            </dx:ASPxGridView>
+
+
+            <iframe id="FrameToPrint" name="PrintingFrame" style="position: absolute; left: -10000px; top: -10000px;"></iframe>
         </div>
-    </div>
-        <input id="visibleIndex" type="hidden" runat ="server" />
-        <input id="isPrint" type="hidden" runat="server" value="false" />
     </form>
-    
+
 </body>
 </html>
