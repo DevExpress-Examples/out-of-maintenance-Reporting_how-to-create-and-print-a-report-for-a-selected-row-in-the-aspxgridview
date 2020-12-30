@@ -28,7 +28,7 @@ Namespace GridReportPrint
 			Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
 			Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
 			Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
-			Me.nwindDataSet1 = New GridReportPrint.NwindDataSet()
+			Me.nwindDataSet1 = New NwindDataSet()
 			Me.xrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
 			Me.xrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
 			Me.xrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
